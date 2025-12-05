@@ -19,8 +19,8 @@ This empowers both **deaf/hard-of-hearing** users and **hearing** users to commu
 - Converts hand gestures into text characters.
 
 ### 2. Text → Voice (TTS)
-- Generates clear, natural speech from text.
-- Language-flexible depending on the TTS engine.
+- Built using microsoft-speecht5.
+- We fine-tuned the model on Egyptian Arabic speech.
 
 ### 3. Voice → Text (ASR)
 - Built using Whisper Large-V3.
@@ -40,7 +40,7 @@ Camera frame → ResNet Model → Predicted Letter → Text
 ```
 **2. Text to Voice**
 ```bash
-Text → TTS Engine → Audio Output
+Text → Preprocessing → microsoft-speecht5 (fine-tuned) → Audio
 ```
 **3. Voice to Text**
 ```bash
@@ -98,6 +98,7 @@ GET /api/video?letter=<LETTER>
 - Python
 - FastAPI
 - Whisper Large-V3 (fine-tuned)
+- microsoft-speecht5_tts (fine-tuned)
 - ResNet-18 (ASL)
 - PEFT / LoRA
 - Mediapipe
@@ -119,5 +120,5 @@ By bridging sign, text, and voice, SignConnect makes communication more inclusiv
 <!-- ## Contributers
 - [Khaled Zakarya](https://github.com/khaledzakarya) → khaledzzyadaa@gmail.com
 - [Khaled Helmy](https://github.com/khalledhelmy) → khalledhellmy@gmail.com
-- [Mohamed Ehab](_____) → ____
+- [Mohamed Ehab](https://github.com/mohammedehab1) → mohammedehab100@yahoo.com
 - [Samer Zaid](_____) → ____ -->
